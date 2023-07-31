@@ -1,0 +1,36 @@
+<html>
+
+
+<style>
+#fondo-contenedor{
+
+    width: 100%;
+    height: 850px;
+    background-image: url("/cielo\ 1.png");
+    background-repeat: repeat-x;
+    background-size:cover;
+    background-attachment: scroll;
+    background-position: 1;
+}
+
+</style>
+<div id="fondo-contenedor">
+</div>
+
+<script>
+var contenedor = document.getElementById('fondo-contenedor');
+var positionX = 1;
+var velocity = 0.3;
+
+ document.addEventListener('DOMContentLoaded', function() {
+  function animate() {
+    positionX = positionX - velocity; // Resta la velocidad al valor de posición en cada iteración
+   contenedor.style.backgroundPosition = positionX + 'px ';
+    requestAnimationFrame(animate);
+  }
+  // Aquí puedes realizar las acciones que deseas cuando los elementos se cargan en el DOM
+  animate(); // Iniciar la animación después de cargar los elementos
+});
+
+</script>
+</html>
